@@ -4,7 +4,7 @@
         .controller('BooksController', BooksController) ;
 
 
-    function BooksController(books, dataFactory) {
+    function BooksController(books, dataFactory, logger) {
 
         var vm = this;
 
@@ -12,10 +12,8 @@
 
         vm.allBooks = dataFactory.getAllBooks();
         vm.allReaders = dataFactory.getAllReaders();
-        //
-        // vm.getBadge = badgeService.retrieveBadge;
-        //
-        // logger.output('BooksController has been created.');
+
+        logger.output('BooksController has been created');
 
     }
 

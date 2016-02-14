@@ -27,5 +27,6 @@
 
     app.config(function(booksProvider){
       booksProvider.setIncludeVersionInTitle(false);
+      console.log('title from constants service' + constants.APP_TITLE);
     });
 }());
