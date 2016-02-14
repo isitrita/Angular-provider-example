@@ -1,7 +1,7 @@
 (function() {
-  angular.mode('app')
-           .factory('dataService', dataService);//имя нашего сервиса, функция, которая будет заассайнена на $get свойство, когда внутри будет вызываться provider. Использовать именованную функцию лучше, а не анонимную проще, потому что это проще мейнтейнить.
-  function dataService(){
+  angular.module('app')
+           .factory('dataFactory', dataFactory);//имя нашего сервиса, функция, которая будет заассайнена на $get свойство, когда внутри будет вызываться provider. Использовать именованную функцию лучше, а не анонимную проще, потому что это проще мейнтейнить.
+  function dataFactory(){
     return {
       getAllBooks: getAllBooks,
       getAllReaders: getAllReaders

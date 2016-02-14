@@ -4,14 +4,14 @@
         .controller('BooksController', BooksController) ;
 
 
-    function BooksController(books, dataService) {
+    function BooksController(books, dataFactory) {
 
         var vm = this;
 
         vm.appName = books.appName;
 
-        vm.allBooks = dataService.getAllBooks();
-        vm.allReaders = dataService.getAllReaders();
+        vm.allBooks = dataFactory.getAllBooks();
+        vm.allReaders = dataFactory.getAllReaders();
         //
         // vm.getBadge = badgeService.retrieveBadge;
         //
