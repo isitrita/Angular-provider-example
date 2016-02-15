@@ -1,7 +1,7 @@
 (function() {
   angular.module('app')
            .factory('dataFactory', dataFactory);//имя нашего сервиса, функция, которая будет заассайнена на $get свойство, когда внутри будет вызываться provider. Использовать именованную функцию лучше, а не анонимную проще, потому что это проще мейнтейнить.
-  function dataFactory(){
+  function dataFactory(logger){
     return {
       getAllBooks: getAllBooks,
       getAllReaders: getAllReaders
@@ -31,6 +31,7 @@
     }
 
     function getAllReaders() {
+      logger.output('getting all readers ');
       return [
         {
           reader_id: 1,
@@ -52,5 +53,7 @@
         }
       ];
     }
+
+    dataFactory.$inject = ['logger']
   }
 }());

@@ -1,7 +1,7 @@
 (function() {
 
     angular.module('app')
-        .controller('BooksController', BooksController) ;
+        .controller('BooksController',['books', 'dataFactory', 'logger', 'badgeService', BooksController]);
 
 
     function BooksController(books, dataFactory, logger, badgeService) {

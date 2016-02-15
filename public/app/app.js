@@ -2,7 +2,7 @@
 
     var app = angular.module('app', []);
 
-    app.provider('books', function(constants) {
+    app.provider('books',['constants',function(constants) {
       this.$get = function () {
         var appName = constants.APP_TITLE;
         var appDesc = constants.APP_DESCRIPTION;
@@ -23,10 +23,10 @@
       this.setIncludeVersionInTitle  = function (value) {
         includeVersionInTitle = value;
       };
-    });
+    }]);
 
-    app.config(function(booksProvider,constants){
+    app.config(['booksProvider','constants', function(booksProvider, constants){
       booksProvider.setIncludeVersionInTitle(false);
-      console.log('title from constants service' + constants.APP_TITLE);
-    });
+      console.log('title from constants service ' + constants.APP_TITLE);
+    }]);
 }());
