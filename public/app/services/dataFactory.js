@@ -31,7 +31,7 @@
     }
 
     function getAllReaders() {
-      logger.output('getting all readers ');
+      logger.output('getting all readers');
       return [
         {
           reader_id: 1,
